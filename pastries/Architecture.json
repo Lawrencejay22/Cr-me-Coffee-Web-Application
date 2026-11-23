@@ -1,0 +1,16 @@
+{
+  "layers": [
+    { "name": "Client: what visitors see (index.html + style.css)",
+      "items": ["Home, Menu, About, Contact", "Login and Register forms", "Customer dashboard", "Admin dashboard"] },
+    { "name": "Application logic (app.js)",
+      "items": ["Session and role guard", "Search, cart and checkout", "Product, order and customer management"] },
+    { "name": "Data (JSON + browser storage)",
+      "items": ["product.json: starting catalogue", "localStorage: users, products, orders, cart, session"] }
+  ],
+  "roles": [
+    { "role": "Guest", "can": "Browse and search the menu. Adding to the cart asks them to log in." },
+    { "role": "Customer", "can": "Register, log in, fill a cart, place orders and follow each order's status." },
+    { "role": "Admin", "can": "Add, edit and delete products, change order status, and see customers and orders." }
+  ],
+  "production": "This version keeps everything in the browser, so it is a demo. For real customers, move users, products and orders to a server API with a database, hash passwords, and check roles on the server."
+}

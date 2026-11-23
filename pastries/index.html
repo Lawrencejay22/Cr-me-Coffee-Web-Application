@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crème & Coffee | Artisan Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <a class="logo" href="#" onclick="showPage('home')">
+        Crème <span>&</span> Coffee.
+    </a>
+
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('menu')">Our Menu</a>
+        <a href="#" onclick="showPage('about')">About</a>
+        <a href="#" onclick="showPage('architecture')">Architecture</a>
+        <a href="#" onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <div class="header-actions" id="headerActions">
+        <button class="outline-btn" onclick="showPage('login')">Login</button>
+        <button class="main-btn" onclick="showPage('register')">Register</button>
+    </div>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="page hero">
+    <div class="hero-content">
+        <span class="eyebrow">FRESHLY BAKED EVERY DAY</span>
+        <h1>A Little Sweetness in Every Moment.</h1>
+        <p>
+            Enjoy handcrafted pastries, freshly brewed coffee,
+            and delicious treats made with love.
+        </p>
+        <button class="main-btn" onclick="showPage('menu')">
+            Explore Our Menu →
+        </button>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="page hidden">
+    <div class="section-title">
+        <span>OUR SPECIALTIES</span>
+        <h2>Fresh from Our Kitchen</h2>
+    </div>
+
+    <input type="search" id="searchProduct"
+        placeholder="Search coffee and pastries..."
+        oninput="renderProducts()">
+
+    <div class="product-grid" id="productGrid"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page hidden">
+    <div class="section-title">
+        <span>OUR STORY</span>
+        <h2>Made with Love, Baked with Passion.</h2>
+        <p>
+            At Crème & Coffee, every cup of coffee and every pastry
+            is prepared to make your day special.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page hidden contact">
+    <span class="eyebrow">COME SAY HELLO</span>
+    <h2>Your Table is Waiting.</h2>
+    <p>Location: Hilongos, Leyte, Philippines</p>
+    <p>Email: hello@cremeandcoffee.com</p>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture" class="page hidden">
+    <div class="section-title">
+        <span>HOW IT WORKS</span>
+        <h2>System Architecture</h2>
+        <p>Every action passes through the application logic, which checks who you are before touching any data.</p>
+    </div>
+    <div id="archLayers" class="arch"></div>
+    <h3 class="arch-heading">Roles</h3>
+    <div id="archRoles" class="arch-roles"></div>
+    <p id="archNote" class="arch-note"></p>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="page hidden auth-section">
+    <div class="auth-card">
+        <h2>Welcome Back!</h2>
+        <p>Login to your Crème & Coffee account.</p>
+
+        <form id="loginForm">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" required>
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" required>
+
+            <button class="main-btn full-btn">Login</button>
+        </form>
+
+        <p>Don't have an account?
+            <a href="#" onclick="showPage('register')">Register here</a>
+        </p>
+    </div>
+</section>
+
+<!-- REGISTRATION -->
+<section id="register" class="page hidden auth-section">
+    <div class="auth-card">
+        <h2>Create Account</h2>
+        <p>Join our coffee-loving community!</p>
+
+        <form id="registerForm">
+            <label for="regName">Full Name</label>
+            <input type="text" id="regName" required>
+
+            <label for="regEmail">Email Address</label>
+            <input type="email" id="regEmail" required>
+
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" minlength="8" required>
+
+            <label for="regConfirm">Confirm Password</label>
+            <input type="password" id="regConfirm" minlength="8" required>
+
+            <button class="main-btn full-btn">Create Account</button>
+        </form>
+
+        <p>Already have an account?
+            <a href="#" onclick="showPage('login')">Login here</a>
+        </p>
+    </div>
+</section>
+
+<!-- USER DASHBOARD -->
+<section id="userDashboard" class="page hidden dashboard">
+    <div class="dashboard-heading">
+        <div>
+            <span class="eyebrow">CUSTOMER ACCOUNT</span>
+            <h2>Welcome, <span id="userName"></span>!</h2>
+        </div>
+        <button class="outline-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>My Cart</h3>
+            <p id="cartCount">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Account Status</h3>
+            <p>Active</p>
+        </div>
+    </div>
+
+    <h3>My Shopping Cart</h3>
+    <div id="cartItems"></div>
+    <h3 id="cartTotal">Total: ₱0.00</h3>
+    <button class="main-btn" onclick="checkout()">Place Order</button>
+
+    <h3 class="dashboard-subtitle">My Orders</h3>
+    <div id="myOrders"></div>
+
+    <h3 class="dashboard-subtitle">My Profile</h3>
+    <p id="profileEmail"></p>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+<section id="adminDashboard" class="page hidden dashboard">
+    <div class="dashboard-heading">
+        <div>
+            <span class="eyebrow">ADMINISTRATION</span>
+            <h2>Admin Dashboard</h2>
+        </div>
+        <button class="outline-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Total Products</h3>
+            <p id="totalProducts">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Registered Users</h3>
+            <p id="totalUsers">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Total Orders</h3>
+            <p id="totalOrders">0</p>
+        </div>
+    </div>
+
+    <div class="admin-panel">
+        <h3>Add New Product</h3>
+
+        <form id="productForm">
+            <input type="text" id="productName"
+                placeholder="Product Name" required>
+
+            <input type="text" id="productDescription"
+                placeholder="Product Description" required>
+
+            <input type="number" id="productPrice"
+                placeholder="Price in PHP" min="1" step="0.01" required>
+
+            <input type="url" id="productImage"
+                placeholder="Image URL" required>
+
+            <select id="productCategory" required>
+                <option value="Coffee">Coffee</option>
+                <option value="Pastries">Pastries</option>
+                <option value="Cakes">Cakes</option>
+            </select>
+
+            <button class="main-btn">Add Product</button>
+        </form>
+    </div>
+
+    <h3>Manage Products</h3>
+    <div id="adminProductList"></div>
+
+    <h3 class="dashboard-subtitle">Registered Customers</h3>
+    <div id="adminUserList"></div>
+
+    <h3 class="dashboard-subtitle">Customer Orders</h3>
+    <div id="adminOrderList"></div>
+</section>
+
+</main>
+
+<footer>
+    <div class="logo">Crème <span>&</span> Coffee.</div>
+    <p>Freshly baked, lovingly brewed.</p>
+    <p>© 2026 Crème & Coffee. All Rights Reserved.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
