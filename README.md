@@ -2,6 +2,9 @@
 
 An artisan bakery and coffee shop web application crafted with pure HTML5, modern CSS3, and modular vanilla JavaScript.
 
+* **🌐 Live Production Web Application:** [https://inquisitive-crostata-f57a80.netlify.app/](https://inquisitive-crostata-f57a80.netlify.app/)
+* **📦 Source Code Repository:** [https://github.com/Lawrencejay22/Cr-me-Coffee-Web-Application/tree/main/Pastries](https://github.com/Lawrencejay22/Cr-me-Coffee-Web-Application/tree/main/Pastries)
+
 ---
 
 ## 📁 Project Architecture & File Organization

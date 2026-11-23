@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Crème & Coffee — Web Application Project Report</title>
@@ -9,7 +10,9 @@
             margin: 18mm 16mm 18mm 16mm;
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -112,7 +115,8 @@
             text-align: justify;
         }
 
-        ul, ol {
+        ul,
+        ol {
             margin-left: 20px;
             margin-bottom: 12px;
         }
@@ -144,7 +148,8 @@
             font-size: 9.5pt;
         }
 
-        th, td {
+        th,
+        td {
             padding: 8px 12px;
             text-align: left;
             border: 1px solid #DDCBB8;
@@ -221,6 +226,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- COVER / HEADER BANNER -->
@@ -239,7 +245,7 @@
             </div>
             <div class="meta-item">
                 <strong>Repository</strong>
-                github.com/blueeeskieee/Pastries
+                github.com/Lawrencejay22/Cr-me-Coffee-Web-Application
             </div>
         </div>
     </div>
@@ -247,36 +253,57 @@
     <!-- SECTION 1 -->
     <div class="section-block">
         <h2><span class="num">1</span> Real-World Problem Identification</h2>
-        <p><strong>Target Industry:</strong> Micro and Small Local Bakeries & Boutique Coffee Shops (Crème & Coffee).</p>
-        <p>Local artisanal bakeries face recurring operational bottlenecks that compromise customer experience and erode profitability:</p>
+        <p><strong>Target Industry:</strong> Micro and Small Local Bakeries & Boutique Coffee Shops (Crème & Coffee).
+        </p>
+        <p>Local artisanal bakeries face recurring operational bottlenecks that compromise customer experience and erode
+            profitability:</p>
         <ul>
-            <li><strong>Exorbitant Aggregator Commissions:</strong> Third-party food delivery aggregators (e.g., GrabFood, Foodpanda) charge between <strong>20% to 35% commission</strong> per transaction, severely reducing margins on low-ticket artisanal food goods.</li>
-            <li><strong>Peak Morning Queueing Friction:</strong> Manual, paper-ticket ordering creates long physical queues, order errors, and lost sales during morning breakfast and snack rush hours.</li>
-            <li><strong>Lack of Real-Time Menu Transparency:</strong> Fresh pastries have variable daily batch runs; when signature items sell out, walk-in customers face disappointment due to the lack of an instantly accessible online catalog.</li>
-            <li><strong>Absence of Centralized Order Tracking:</strong> Small bakery owners lack affordable, lightweight digital pipelines to track incoming orders from preparation to fulfillment without costly POS subscription software.</li>
+            <li><strong>Exorbitant Aggregator Commissions:</strong> Third-party food delivery aggregators (e.g.,
+                GrabFood, Foodpanda) charge between <strong>20% to 35% commission</strong> per transaction, severely
+                reducing margins on low-ticket artisanal food goods.</li>
+            <li><strong>Peak Morning Queueing Friction:</strong> Manual, paper-ticket ordering creates long physical
+                queues, order errors, and lost sales during morning breakfast and snack rush hours.</li>
+            <li><strong>Lack of Real-Time Menu Transparency:</strong> Fresh pastries have variable daily batch runs;
+                when signature items sell out, walk-in customers face disappointment due to the lack of an instantly
+                accessible online catalog.</li>
+            <li><strong>Absence of Centralized Order Tracking:</strong> Small bakery owners lack affordable, lightweight
+                digital pipelines to track incoming orders from preparation to fulfillment without costly POS
+                subscription software.</li>
         </ul>
         <div class="highlight-card">
-            <strong>The Web Application Solution:</strong> Crème & Coffee is a responsive, zero-maintenance direct ordering web platform that enables small bakeries to showcase categorized products, facilitate direct customer cart checkouts with live status tracking, and provide store administrators with full menu CRUD and order pipeline control—all operating in the browser without server hosting fees.
+            <strong>The Web Application Solution:</strong> Crème & Coffee is a responsive, zero-maintenance direct
+            ordering web platform that enables small bakeries to showcase categorized products, facilitate direct
+            customer cart checkouts with live status tracking, and provide store administrators with full menu CRUD and
+            order pipeline control—all operating in the browser without server hosting fees.
         </div>
     </div>
 
     <!-- SECTION 2 -->
     <div class="section-block">
         <h2><span class="num">2</span> System Requirements Analysis</h2>
-        
+
         <h3>A. User Roles & Stakeholders</h3>
         <ul>
-            <li><strong>Guest (Unauthenticated Visitor):</strong> Browses the menu, filters by category, searches items via keywords, inspects product prices/descriptions, and views bakery information.</li>
-            <li><strong>Registered Customer (Role: 'user'):</strong> Creates accounts, manages persistent shopping carts, adjusts item quantities, places orders, and tracks live fulfillment statuses.</li>
-            <li><strong>Store Administrator (Role: 'admin'):</strong> Accesses the protected administrative portal, monitors store metrics, creates/edits/deletes menu products, and manages order statuses in real time.</li>
+            <li><strong>Guest (Unauthenticated Visitor):</strong> Browses the menu, filters by category, searches items
+                via keywords, inspects product prices/descriptions, and views bakery information.</li>
+            <li><strong>Registered Customer (Role: 'user'):</strong> Creates accounts, manages persistent shopping
+                carts, adjusts item quantities, places orders, and tracks live fulfillment statuses.</li>
+            <li><strong>Store Administrator (Role: 'admin'):</strong> Accesses the protected administrative portal,
+                monitors store metrics, creates/edits/deletes menu products, and manages order statuses in real time.
+            </li>
         </ul>
 
         <h3>B. Core System Processes</h3>
         <ul>
-            <li><strong>Authentication & Role-Based Access Control (RBAC):</strong> Enforces route security via session verification before rendering customer or administrative views.</li>
-            <li><strong>Catalog Categorization & Stemming Search:</strong> Organizes items into distinct categories (Pastries, Coffee, Cakes), applies singular/plural keyword stemming, and supports multi-mode sorting.</li>
-            <li><strong>Cart Management & Checkout Execution:</strong> Handles item additions, quantity arithmetic, grand total computations in PHP (₱), and serializes new order records.</li>
-            <li><strong>Administrative Inventory & Order Lifecycle:</strong> Provides full product CRUD and status-state transitions (Pending → Preparing → Completed / Cancelled).</li>
+            <li><strong>Authentication & Role-Based Access Control (RBAC):</strong> Enforces route security via session
+                verification before rendering customer or administrative views.</li>
+            <li><strong>Catalog Categorization & Stemming Search:</strong> Organizes items into distinct categories
+                (Pastries, Coffee, Cakes), applies singular/plural keyword stemming, and supports multi-mode sorting.
+            </li>
+            <li><strong>Cart Management & Checkout Execution:</strong> Handles item additions, quantity arithmetic,
+                grand total computations in PHP (₱), and serializes new order records.</li>
+            <li><strong>Administrative Inventory & Order Lifecycle:</strong> Provides full product CRUD and status-state
+                transitions (Pending → Preparing → Completed / Cancelled).</li>
         </ul>
 
         <h3>C. Input, Output & Data Specifications</h3>
@@ -334,12 +361,14 @@
                 </tr>
                 <tr>
                     <td><strong>Product</strong></td>
-                    <td><code>id (Num), name (Str), category (Str), description (Str), price (Num), image (Str)</code></td>
+                    <td><code>id (Num), name (Str), category (Str), description (Str), price (Num), image (Str)</code>
+                    </td>
                     <td><code>data/product.json</code> + <code>localStorage['cc_products']</code></td>
                 </tr>
                 <tr>
                     <td><strong>Order</strong></td>
-                    <td><code>id (Num), customer (Str), email (Str), items (Array), total (Num), status (Str), date (Str)</code></td>
+                    <td><code>id (Num), customer (Str), email (Str), items (Array), total (Num), status (Str), date (Str)</code>
+                    </td>
                     <td><code>localStorage['cc_orders']</code></td>
                 </tr>
             </tbody>
@@ -349,13 +378,21 @@
     <!-- SECTION 3 -->
     <div class="section-block">
         <h2><span class="num">3</span> Design & AI-Assisted Development</h2>
-        <p><strong>Design System & UI/UX:</strong> The visual theme embodies an artisanal European bakery using warm, inviting tones: Cream background (<code>#FAF5ED</code>), Caramel accents (<code>#B77B4B</code>), and Espresso typography (<code>#493326</code>). Semantic HTML5 and mobile-first CSS Grid and Flexbox ensure responsive adaptability across desktop, tablet, and smartphone viewports.</p>
+        <p><strong>Design System & UI/UX:</strong> The visual theme embodies an artisanal European bakery using warm,
+            inviting tones: Cream background (<code>#FAF5ED</code>), Caramel accents (<code>#B77B4B</code>), and
+            Espresso typography (<code>#493326</code>). Semantic HTML5 and mobile-first CSS Grid and Flexbox ensure
+            responsive adaptability across desktop, tablet, and smartphone viewports.</p>
         <p><strong>Role of AI Tools in Development:</strong></p>
         <ul>
-            <li><strong>Architectural Synthesis:</strong> AI was utilized to architect a clean 3-tier client-side design, separating data models, business rules, and UI rendering.</li>
-            <li><strong>Code Generation & Modularization:</strong> AI generated and refactored <code>app.js</code> into 13 structured sections with strict XSS sanitization (<code>escapeHTML</code>).</li>
-            <li><strong>Resilient Offline Systems:</strong> Implemented dual-path data retrieval combining asynchronous <code>fetch()</code> with in-memory fallback datasets.</li>
-            <li><strong>Automated Diagram Generation:</strong> Scripted automated generation of high-resolution vector diagrams via PowerShell and .NET <code>System.Drawing</code>.</li>
+            <li><strong>Architectural Synthesis:</strong> AI was utilized to architect a clean 3-tier client-side
+                design, separating data models, business rules, and UI rendering.</li>
+            <li><strong>Code Generation & Modularization:</strong> AI generated and refactored <code>app.js</code> into
+                13 structured sections with strict XSS sanitization (<code>escapeHTML</code>).</li>
+            <li><strong>Resilient Offline Systems:</strong> Implemented dual-path data retrieval combining asynchronous
+                <code>fetch()</code> with in-memory fallback datasets.
+            </li>
+            <li><strong>Automated Diagram Generation:</strong> Scripted automated generation of high-resolution vector
+                diagrams via PowerShell and .NET <code>System.Drawing</code>.</li>
         </ul>
     </div>
 
@@ -364,15 +401,16 @@
     <!-- SECTION 4 & 5 -->
     <div class="section-block">
         <h2><span class="num">4 & 5</span> Deployment, Hosting & Web Application URLs</h2>
-        <p>The web application is structured at the repository root and configured for static web hosting without build steps or complex dependencies:</p>
-        
+        <p>The web application is structured at the repository root and configured for static web hosting without build
+            steps or complex dependencies:</p>
+
         <div class="card">
             <strong>🌐 Live Production Web Application:</strong>
-            <div class="url-box">https://blueeeskieee.github.io/Pastries/</div>
-            
+            <div class="url-box">https://inquisitive-crostata-f57a80.netlify.app/</div>
+
             <strong>📦 Source Code Repository (GitHub):</strong>
-            <div class="url-box">https://github.com/blueeeskieee/Pastries</div>
-            
+            <div class="url-box">https://github.com/Lawrencejay22/Cr-me-Coffee-Web-Application</div>
+
             <strong>🔑 Demo Test Credentials:</strong>
             <ul>
                 <li><strong>Administrator:</strong> <code>admin@creme.com</code> | Password: <code>admin123</code></li>
@@ -384,28 +422,50 @@
     <!-- SECTION 6 & 7 -->
     <div class="section-block">
         <h2><span class="num">6 & 7</span> System Architecture Diagram (Exported PNG)</h2>
-        <p>The system is organized into a three-tier architecture: <strong>Presentation Layer (UI/UX)</strong>, <strong>Application Logic Layer (Controller & Rules)</strong>, and <strong>Data Storage Layer (JSON & Web Storage)</strong>, driven by distinct user roles.</p>
-        
+        <p>The system is organized into a three-tier architecture: <strong>Presentation Layer (UI/UX)</strong>,
+            <strong>Application Logic Layer (Controller & Rules)</strong>, and <strong>Data Storage Layer (JSON & Web
+                Storage)</strong>, driven by distinct user roles.
+        </p>
+
         <div class="diagram-container">
             <img src="system_architecture.png" alt="System Architecture Diagram">
-            <div class="diagram-caption">Figure 1.0: Crème & Coffee Three-Tier System Architecture Diagram (Exported as system_architecture.png)</div>
+            <div class="diagram-caption">Figure 1.0: Crème & Coffee Three-Tier System Architecture Diagram (Exported as
+                system_architecture.png)</div>
         </div>
     </div>
 
     <!-- SECTION 8 -->
     <div class="section-block">
         <h2><span class="num">8</span> System Operation & Component Relationships</h2>
-        <p>The following paragraph explains the end-to-end operation of the web application and details the relationship of the components illustrated in the system architecture diagram:</p>
-        
+        <p>The following paragraph explains the end-to-end operation of the web application and details the relationship
+            of the components illustrated in the system architecture diagram:</p>
+
         <div class="explanation-box">
-            The Crème & Coffee web application operates as a client-side single-page application structured across three interconnected architectural tiers: the Presentation Layer, the Application Logic Layer, and the Data Storage Layer. When users interact with the system—whether as unauthenticated guests, registered customers, or store administrators—their actions in the Presentation Layer trigger DOM event listeners that are dispatched to the Application Logic controller in <code>js/app.js</code>. The Route and RBAC Guard inspects the current user’s session state to ensure that restricted views, such as customer order histories and administrative management tools, are only rendered for authorized roles. For catalog browsing, the Filter and Search Engine processes input from the presentation controls, categorizing items into distinct pastry, coffee, and cake collections while applying multi-criteria sorting algorithms. When a customer places an order, the Cart and Order Processor calculates itemized totals and serializes order records into browser <code>localStorage</code>, ensuring data persistence across sessions without requiring an external backend server. Concurrently, store administrators utilize the Admin API within the logic tier to mutate the inventory and transition order fulfillment statuses between Pending, Preparing, Completed, and Cancelled. On initial load, the system asynchronously retrieves catalog data from <code>data/product.json</code>, falling back gracefully to embedded in-memory data structures whenever network access or local server hosting is unavailable. This bidirectional relationship between the visual interface, centralized logic engine, and localized persistence layer delivers a seamless, responsive, and secure e-commerce experience tailored for small bakery operations.
+            The Crème & Coffee web application operates as a client-side single-page application structured across three
+            interconnected architectural tiers: the Presentation Layer, the Application Logic Layer, and the Data
+            Storage Layer. When users interact with the system—whether as unauthenticated guests, registered customers,
+            or store administrators—their actions in the Presentation Layer trigger DOM event listeners that are
+            dispatched to the Application Logic controller in <code>js/app.js</code>. The Route and RBAC Guard inspects
+            the current user’s session state to ensure that restricted views, such as customer order histories and
+            administrative management tools, are only rendered for authorized roles. For catalog browsing, the Filter
+            and Search Engine processes input from the presentation controls, categorizing items into distinct pastry,
+            coffee, and cake collections while applying multi-criteria sorting algorithms. When a customer places an
+            order, the Cart and Order Processor calculates itemized totals and serializes order records into browser
+            <code>localStorage</code>, ensuring data persistence across sessions without requiring an external backend
+            server. Concurrently, store administrators utilize the Admin API within the logic tier to mutate the
+            inventory and transition order fulfillment statuses between Pending, Preparing, Completed, and Cancelled. On
+            initial load, the system asynchronously retrieves catalog data from <code>data/product.json</code>, falling
+            back gracefully to embedded in-memory data structures whenever network access or local server hosting is
+            unavailable. This bidirectional relationship between the visual interface, centralized logic engine, and
+            localized persistence layer delivers a seamless, responsive, and secure e-commerce experience tailored for
+            small bakery operations.
         </div>
     </div>
 
     <div class="footer-note">
-        Crème & Coffee Web Application Project Report • Generated November 2026 • Blueeeskieee / Pastries
+        Crème & Coffee Web Application Project Report • Generated November 2026 • Lawrencejay22 / Cr-me-Coffee-Web-Application
     </div>
 
 </body>
-</html>
 
+</html>
