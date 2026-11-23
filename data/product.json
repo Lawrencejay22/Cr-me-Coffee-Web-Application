@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Butter Croissant",
+      "category": "Pastries",
+      "description": "Golden, flaky and buttery goodness in every bite.",
+      "price": 150,
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700"
+    },
+    {
+      "id": 2,
+      "name": "Artisan Bread",
+      "category": "Pastries",
+      "description": "Freshly baked bread with a soft and delicious center.",
+      "price": 200,
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700"
+    },
+    {
+      "id": 3,
+      "name": "Classic Cappuccino",
+      "category": "Coffee",
+      "description": "Rich espresso topped with smooth creamy milk foam.",
+      "price": 280,
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700"
+    },
+    {
+      "id": 4,
+      "name": "Chocolate Cake",
+      "category": "Cakes",
+      "description": "Moist chocolate cake with rich chocolate frosting.",
+      "price": 150,
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700"
+    },
+    {
+      "id": 5,
+      "name": "Iced Coffee",
+      "category": "Coffee",
+      "description": "A refreshing coffee blend for everyday cravings.",
+      "price": 95,
+      "image": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=700"
+    },
+    {
+      "id": 6,
+      "name": "Vanilla Cupcakes",
+      "category": "Pastries",
+      "description": "Soft vanilla cupcakes topped with sweet buttercream.",
+      "price": 75,
+      "image": "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=700"
+    }
+  ]
+}
+
